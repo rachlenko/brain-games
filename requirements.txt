@@ -1,9 +1,6 @@
-appdirs @ file:///build/appdirs-1.4.4/dist/appdirs-1.4.4-py2.py3-none-any.whl
 black==21.7b0
 cfgv==3.3.0
 click==8.0.1
-distlib @ file:///build/distlib-0.3.1/dist/distlib-0.3.1-py3-none-any.whl
-filelock @ file:///build/filelock-3.0.12/dist/filelock-3.0.12-py3-none-any.whl
 flake8==3.9.2
 identify==2.2.13
 mccabe==0.6.1
@@ -15,7 +12,5 @@ pycodestyle==2.7.0
 pyflakes==2.3.1
 PyYAML==5.4.1
 regex==2021.8.3
-six @ file:///build/six-1.15.0/dist/six-1.15.0-py2.py3-none-any.whl
 toml==0.10.2
 tomli==1.2.1
-virtualenv @ file:///build/virtualenv-20.0.31/dist/virtualenv-20.0.31-py2.py3-none-any.whl

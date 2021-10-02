@@ -7,35 +7,22 @@ import games.multiply as multiply
 
 
 def main():
-    print("welcome to brain game")
-    print("enter your name:")
-    username = sys.stdin.readline()
-    print_bunner()
-    print("hello {}".format(username))
-
-    print(
-        """choose your game :
-        [1] progression
-        [2] summarize
-        [3] divide
-        [4] multiply
-        [0] exit
-        """
-    )
+    wellcome_msg()
 
     game_id = sys.stdin.readline()
     log("game_id is {}".format(game_id.strip()))
 
     if int(game_id.strip()) not in range(5):
         log("wrong number has been choose {}".format(game_id))
-        end_game(username)
-    run_game(game_id)
-    progression.run()
+        end_game()
+    username = get_username()
+    run_game(game_id, username)
 
 
-def run_game(game_id):
+def run_game(game_id, username):
     if int(game_id) == 1:
-        progression.run()
+        correct_answers, missed_answers = progression.run(username)
+        end_game(username, correct_answers, missed_answers)
     if int(game_id) == 2:
         summarize.run()
     if int(game_id) == 3:
@@ -46,22 +33,52 @@ def run_game(game_id):
         end_game()
 
 
-def log(msg):
-    print(msg)
+def get_username():
+    print("May I have your name?")
+    username = sys.stdin.readline().strip()
+    print(f"Hello, {username}!")
+    return username
 
 
-def end_game(username):
+def log(msg, debug=0):
+    if debug:
+        print(msg)
+
+
+def end_game(username, correct_answers, missed_answers):
     """
     save users score
     print out goodbye message
     """
-    print("goodbye {}".format(username))
+    print(
+        f"""You score is :
+        {correct_answers} correct answers
+        {missed_answers} missed answers"""
+    )
+    log(
+        f"""updated score in db:
+            correct answers {correct_answers}
+            missed answers {missed_answers}
+           """
+    )
+    # TODO here should be question : "do you like to continue? "
+    print(f"Goodbye {username}!")
 
 
-def print_bunner():
+def wellcome_msg():
+    print("Welcome to the Brain Game!")
     print()
     print()
     print()
+    print(
+        """choose your game :
+        [1] progression
+        [2] summarize
+        [3] divide
+        [4] multiply
+        [0] exit
+        """
+    )
 
 
 if __name__ == "__main__":

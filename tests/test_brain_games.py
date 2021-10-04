@@ -1,2 +1,5 @@
-def test_tmp_example():
-    assert (1, 2, 3) == (1, 2, 3)
+from brain_games import __version__
+
+
+def test_version():
+    assert __version__ == '0.1.0'

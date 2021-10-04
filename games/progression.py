@@ -62,12 +62,12 @@ def check_answer(user_answer, generated_answer, username):
 
 
 def summary(correct_answers, questions_round, username):
+    missed_answers = 0
     if correct_answers == questions_round:
         print(f"Congratulations, {username}!")
     else:
         missed_answers = questions_round - correct_answers
         print("\n\nGame over")
-
     return (correct_answers, missed_answers)
 
 

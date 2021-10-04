@@ -7,7 +7,7 @@ import games.multiply as multiply
 
 
 def main():
-    wellcome_msg()
+    welcome_msg()
 
     game_id = sys.stdin.readline()
     log("game_id is {}".format(game_id.strip()))
@@ -65,7 +65,7 @@ def end_game(username, correct_answers, missed_answers):
     print(f"Goodbye {username}!")
 
 
-def wellcome_msg():
+def welcome_msg():
     print("Welcome to the Brain Game!")
     print()
     print()

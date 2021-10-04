@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "brain-games"
 version = "0.1.0"
-description = ""
+description = "anti dementia games"
 authors = ["Evgeny Rachlenko <evgeny.rachlenko@gmail.com>"]
 
 [tool.poetry.dependencies]

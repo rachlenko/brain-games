@@ -20,6 +20,8 @@ def main():
 
 
 def run_game(game_id, username):
+    missed_answers = 0
+    correct_answers = 0
     if int(game_id) == 1:
         correct_answers, missed_answers = progression.run(username)
         end_game(username, correct_answers, missed_answers)
@@ -30,7 +32,7 @@ def run_game(game_id, username):
     if int(game_id) == 4:
         multiply.run()
     if int(game_id) == 0:
-        end_game()
+        end_game(username, correct_answers, missed_answers)
 
 
 def get_username():
@@ -45,22 +47,23 @@ def log(msg, debug=0):
         print(msg)
 
 
-def end_game(username, correct_answers, missed_answers):
+def end_game(username="", correct_answers=0, missed_answers=0):
     """
     save users score
     print out goodbye message
     """
-    print(
-        f"""You score is :
-        {correct_answers} correct answers
-        {missed_answers} missed answers"""
-    )
-    log(
-        f"""updated score in db:
-            correct answers {correct_answers}
-            missed answers {missed_answers}
-           """
-    )
+    if username != "":
+        print(
+            f"""You score is :
+            {correct_answers} correct answers
+            {missed_answers} missed answers"""
+        )
+        log(
+            f"""updated score in db:
+                correct answers {correct_answers}
+                missed answers {missed_answers}
+               """
+        )
     # TODO here should be question : "do you like to continue? "
     print(f"Goodbye {username}!")
 

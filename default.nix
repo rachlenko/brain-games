@@ -20,8 +20,9 @@ in
 
      curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python -
      source $HOME/.poetry/env
-     [ -d brain-games ] || echo "HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH"
+     [ -f poetry.lock ] || poetry new `basename $(pwd)`
      poetry install
+
      pre-commit install
       '';
   }

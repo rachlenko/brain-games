@@ -6,13 +6,19 @@ authors = ["Evgeny Rachlenko <evgeny.rachlenko@gmail.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.9"
-black = "^21.9b0"
-pre-commit = "^2.15.0"
-flake8 = "^3.9.2"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
+ddtrace = "^0.53.3"
+ipython = "^7.28.0"
+flake8 = "^3.9.2"
+pre-commit = "^2.15.0"
+black = "^21.9b0"
+
+[tool.poetry.scripts]
+say-hello="brain_games.scripts.say_hello:main"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
+

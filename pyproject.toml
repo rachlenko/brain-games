@@ -14,6 +14,7 @@ ipython = "^7.28.0"
 flake8 = "^3.9.2"
 pre-commit = "^2.15.0"
 black = "^21.9b0"
+locust = "^2.2.3"
 
 [tool.poetry.scripts]
 say-hello="brain_games.scripts.say_hello:main"
